@@ -118,12 +118,20 @@ def render_group(group:Group):
     console = Console()
     console.print(table)
 
-def main(benchmark_file:Path):
+app = typer.Typer()
+
+@app.command()
+def single_file(benchmark_file:Path):
     data = BenchmarkSave.from_file(benchmark_file)
 
     groups = group_benchmarks(data.benchmarks)
     for group in groups:
         render_group(group)
 
+@app.command()
+def directory(benchmark_dir:Path):
+    for file in benchmark_dir.glob("**/*.json"):
+        single_file(file)
+
 if __name__ == '__main__':
-    typer.run(main)
+    app()
