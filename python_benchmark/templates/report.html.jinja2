@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css"/>
+
+    <title>Report</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="mui-container">
+    <div class="mui-row">
+        <div class="mui-col-sm-10 mui-col-sm-offset-1">
+            <h2>Config</h2>
+            <div class="mui-panel">
+                <table class="mui-table mui-table--bordered">
+                    <tbody>
+                    {% for name, value in info %}
+                        <tr>
+                            <td>{{ name }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <h1>Benchmarks</h1>
+            {% for group in groups %}
+                <h2>{{ group.name }}</h2>
+
+                <div class="mui-panel">
+                    <p>{{ group.description }}</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for benchmark in group.benchmarks %}
+                            <tr>
+                                <td>{{ benchmark.name }}</td>
+                                <td>{{ benchmark.min }}</td>
+                                <td>{{ benchmark.scaled }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
