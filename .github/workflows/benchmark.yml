@@ -1,27 +1,31 @@
-name: CI
-on: pull_request
+name: Benchmark
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+
+
 
 jobs:
-  ci:
+  benchmark:
+    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
-        python-version: [ 3.7, 3.8, 3.9, 3.10, pypy3.7, pypy3.8, pypy3.9 ]
+        python-version: [ 3.7, 3.8, 3.9, "3.10", pypy-3.7, pypy-3.8, pypy-3.9 ]
         poetry-version: [ 1.1.13 ]
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
-    #                include:
-    #                    -   os: ubuntu-latest
-    #                        path: ~/.cache/pypoetry/virtualenvs
-    #                    -   os: windows-latest
-    #                        path: ~\AppData\Local\pypoetry\Cache\virtualenvs
+        os: [ ubuntu-latest , windows-latest, macos-latest ]
+        exclude:
+          # Disable because poetry doesn't install and I don't know how to fix it yet.
+          - os: ubuntu-latest
+            python-version: pypy-3.9
+
     runs-on: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        id: poetry-cache
-        with:
-          path: ${{ matrix.path }}
-          key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('poetry.lock') }}
 
       - uses: actions/setup-python@v2
         with:
@@ -36,5 +40,45 @@ jobs:
 
       - name: Benchmark
         run: poetry run pytest --benchmark-autosave
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: .benchmarks
+          path: .benchmarks
+
+  report:
+    runs-on: ubuntu-latest
+    needs:
+      - benchmark
+    strategy:
+      matrix:
+        python-version: [ "3.10" ]
+        poetry-version: [ 1.1.13 ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+      - name: Install Dependencies
+        run: poetry install
+
+      - uses: actions/download-artifact@v3
+
       - name: Report
-        run: poetry run python ./bench_reporter.py ./.benchmarks
+        run: poetry run python -m python_benchmark.bench_reporter directory-html .benchmarks .public
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Report
+          path: .public
+
+      - name: Deploy
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .public
