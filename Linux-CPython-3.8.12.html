@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css"/>
+
+    <title>Report</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="mui-container">
+    <div class="mui-row">
+        <div class="mui-col-sm-10 mui-col-sm-offset-1">
+            <h2>Config</h2>
+            <div class="mui-panel">
+                <table class="mui-table mui-table--bordered">
+                    <tbody>
+                    
+                        <tr>
+                            <td>Python Implementation</td>
+                            <td>CPython</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Python Version</td>
+                            <td>3.8.12</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Operating System</td>
+                            <td>Linux 5.11.0-1028-azure</td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <h1>Benchmarks</h1>
+            
+                <h2>TestCall</h2>
+
+                <div class="mui-panel">
+                    <p>Call global or local functions</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                <td>Call builtin function</td>
+                                <td>2.61111e-07</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Calls a local function</td>
+                                <td>2.65e-07</td>
+                                <td>1.01489</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestFilter</h2>
+
+                <div class="mui-panel">
+                    <p>None</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                <td>Filter in the comprehension</td>
+                                <td>0.00285202</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Use filter on list comprehension</td>
+                                <td>0.00957917</td>
+                                <td>3.35873</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Use filter on generator comprehension</td>
+                                <td>0.0112192</td>
+                                <td>3.93377</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestSetAccess</h2>
+
+                <div class="mui-panel">
+                    <p>
+    Get any item from set
+
+    In this case we want to get a single element out of a set.
+    It does not matter which element, but we need one.
+    </p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                <td>Get an item by using iter and next</td>
+                                <td>3e-07</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Get a member by converting to a list first</td>
+                                <td>0.000665106</td>
+                                <td>2217.02</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>
