@@ -47,7 +47,11 @@
                         <tbody>
                         {% for benchmark in group.benchmarks %}
                             <tr>
-                                <td>{{ benchmark.name }}</td>
+                                {% if benchmark.link %}
+                                    <td><a href="{{ benchmark.link }}">{{ benchmark.name }}</a></td>
+                                {% else %}
+                                    <td>{{ benchmark.name }}</td>
+                                {% endif %}
                                 <td>{{ benchmark.min }}</td>
                                 <td>{{ benchmark.scaled }}</td>
                             </tr>

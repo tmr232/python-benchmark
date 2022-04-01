@@ -69,7 +69,7 @@ jobs:
       - uses: actions/download-artifact@v3
 
       - name: Report
-        run: poetry run python -m python_benchmark.bench_reporter directory-html .benchmarks .public
+        run: poetry run python -m python_benchmark.bench_reporter directory-html .benchmarks .public --repo-base-url https://github.com/tmr232/python-benchmark/blob/main
 
       - uses: actions/upload-artifact@v3
         with:

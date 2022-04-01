@@ -1,3 +1,4 @@
+import inspect
 import json
 import operator
 import os
@@ -147,6 +148,7 @@ class DisplayBenchmark:
     name: str
     min: str
     scaled: str
+    link: str | None
 
 
 @attrs.define
@@ -156,7 +158,9 @@ class DisplayGroup:
     benchmarks: list[DisplayBenchmark]
 
 
-def render_groups_html(groups: Sequence[Group], machine_info: MachineInfo):
+def render_groups_html(
+    groups: Sequence[Group], machine_info: MachineInfo, link_base: str | None = None
+):
 
     display_groups = []
     for group in groups:
@@ -172,6 +176,7 @@ def render_groups_html(groups: Sequence[Group], machine_info: MachineInfo):
                     name=benchmark.source.func.__doc__,
                     min=f"{benchmark.benchmark.stats.min:g}",
                     scaled=f"{relative:g}",
+                    link=get_link(link_base, benchmark.source) if link_base else None,
                 )
             )
 
@@ -221,8 +226,21 @@ def directory(benchmark_dir: Path):
         single_file(file)
 
 
+def get_link(base: str, source: Source) -> str:
+    # This is truly terrible. But I want to see that it works.
+    lines, start = inspect.getsourcelines(source.func)
+    end = start + len(lines) - 1
+    path = source.module.__name__
+    base = base.rstrip("/")
+    return f"{base}/{path}#L{start}-L{end}="
+
+
 @app.command()
-def directory_html(benchmark_dir: Path, out_dir: Path):
+def directory_html(
+    benchmark_dir: Path,
+    out_dir: Path,
+    repo_base_url: str | None = None,
+):
     out_dir.mkdir(exist_ok=True)
 
     files_to_process = []
@@ -240,7 +258,8 @@ def directory_html(benchmark_dir: Path, out_dir: Path):
 
         groups = group_benchmarks(save.benchmarks)
         (out_dir / name).write_text(
-            render_groups_html(groups, save.machine_info), "utf8"
+            render_groups_html(groups, save.machine_info, link_base=repo_base_url),
+            "utf8",
         )
         print(f"Written report to {out_dir/name}")
 
