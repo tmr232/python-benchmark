@@ -58,14 +58,14 @@
                         
                             <tr>
                                 <td>Calls a local function</td>
-                                <td>7.784e-10</td>
+                                <td>8.191e-10</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Call builtin function</td>
-                                <td>1.7654e-08</td>
-                                <td>22.6799</td>
+                                <td>1.7651e-08</td>
+                                <td>21.5493</td>
                             </tr>
                         
                         </tbody>
@@ -88,45 +88,63 @@
                         <tbody>
                         
                             <tr>
-                                <td>Initialize a plain class with slots</td>
-                                <td>1.9306e-08</td>
+                                <td>Initialize a plain class</td>
+                                <td>1.9541e-08</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
-                                <td>Initialize a plain class</td>
-                                <td>1.9544e-08</td>
-                                <td>1.01233</td>
+                                <td>Initialize a plain class with slots</td>
+                                <td>2.0339e-08</td>
+                                <td>1.04084</td>
                             </tr>
                         
                             <tr>
                                 <td>Initialize an attrs class</td>
-                                <td>2.0087e-08</td>
-                                <td>1.04045</td>
+                                <td>2.1158e-08</td>
+                                <td>1.08275</td>
                             </tr>
                         
                             <tr>
                                 <td>Initialize a dataclass</td>
-                                <td>2.1616e-08</td>
-                                <td>1.11965</td>
+                                <td>2.2779e-08</td>
+                                <td>1.1657</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize a dict</td>
+                                <td>2.51919e-08</td>
+                                <td>1.28918</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize a tuple</td>
+                                <td>2.74913e-08</td>
+                                <td>1.40685</td>
                             </tr>
                         
                             <tr>
                                 <td>Initialize a frozen attrs class</td>
-                                <td>3.91613e-08</td>
-                                <td>2.02845</td>
+                                <td>3.9418e-08</td>
+                                <td>2.0172</td>
                             </tr>
                         
                             <tr>
                                 <td>Initialize a collections.namedtuple class</td>
-                                <td>4.60769e-08</td>
-                                <td>2.38666</td>
+                                <td>4.893e-08</td>
+                                <td>2.50397</td>
                             </tr>
                         
                             <tr>
                                 <td>Initialize a typing.NamedTuple class</td>
-                                <td>4.64722e-08</td>
-                                <td>2.40714</td>
+                                <td>5.027e-08</td>
+                                <td>2.57254</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize a typing.TypedDict</td>
+                                <td>2.2556e-07</td>
+                                <td>11.5429</td>
                             </tr>
                         
                         </tbody>
@@ -150,44 +168,44 @@
                         
                             <tr>
                                 <td>Access members of a plain class</td>
-                                <td>2.67341e-08</td>
+                                <td>2.87811e-08</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
-                                <td>Access members of a plain class with slots</td>
-                                <td>2.71848e-08</td>
-                                <td>1.01686</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>Access members of a dataclass</td>
-                                <td>2.96585e-08</td>
-                                <td>1.10939</td>
-                            </tr>
-                        
-                            <tr>
                                 <td>Access members of an attrs class</td>
-                                <td>3.02683e-08</td>
-                                <td>1.1322</td>
+                                <td>3.04847e-08</td>
+                                <td>1.05919</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Access members of a plain class with slots</td>
+                                <td>3.07105e-08</td>
+                                <td>1.06704</td>
                             </tr>
                         
                             <tr>
                                 <td>Access members of a frozen attrs class</td>
-                                <td>3.05817e-08</td>
-                                <td>1.14392</td>
+                                <td>3.23464e-08</td>
+                                <td>1.12388</td>
                             </tr>
                         
                             <tr>
-                                <td>Access members of a collections.namedtuple class</td>
-                                <td>3.27208e-08</td>
-                                <td>1.22393</td>
+                                <td>Access members of a dataclass</td>
+                                <td>3.4e-08</td>
+                                <td>1.18133</td>
                             </tr>
                         
                             <tr>
                                 <td>Access members of a typing.NamedTuple class</td>
-                                <td>3.35274e-08</td>
-                                <td>1.25411</td>
+                                <td>3.54307e-08</td>
+                                <td>1.23104</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Access members of a collections.namedtuple class</td>
+                                <td>3.70448e-08</td>
+                                <td>1.28712</td>
                             </tr>
                         
                         </tbody>
@@ -210,14 +228,14 @@
                         
                             <tr>
                                 <td>Create a dict using a literal</td>
-                                <td>3.03043e-08</td>
+                                <td>3.45211e-08</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Create a dict using keyword arguments</td>
-                                <td>1.9947e-07</td>
-                                <td>6.58222</td>
+                                <td>2.67158e-07</td>
+                                <td>7.73897</td>
                             </tr>
                         
                         </tbody>
@@ -240,20 +258,20 @@
                         
                             <tr>
                                 <td>Create a dict comprehension</td>
-                                <td>0.00545632</td>
+                                <td>0.00696938</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Create a dict from a list comprehension</td>
-                                <td>0.0112898</td>
-                                <td>2.06912</td>
+                                <td>0.0112305</td>
+                                <td>1.61141</td>
                             </tr>
                         
                             <tr>
                                 <td>Create a dict from a generator comprehension</td>
-                                <td>0.0140605</td>
-                                <td>2.57692</td>
+                                <td>0.0136892</td>
+                                <td>1.96419</td>
                             </tr>
                         
                         </tbody>
@@ -276,20 +294,20 @@
                         
                             <tr>
                                 <td>Filter in the comprehension</td>
-                                <td>0.00154763</td>
+                                <td>0.00118691</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Use filter on list comprehension</td>
-                                <td>0.0226232</td>
-                                <td>14.618</td>
+                                <td>0.0220752</td>
+                                <td>18.5989</td>
                             </tr>
                         
                             <tr>
                                 <td>Use filter on generator comprehension</td>
-                                <td>0.0463044</td>
-                                <td>29.9195</td>
+                                <td>0.0416578</td>
+                                <td>35.0977</td>
                             </tr>
                         
                         </tbody>
@@ -317,14 +335,14 @@
                         
                             <tr>
                                 <td>Get an item by using iter and next</td>
-                                <td>3.92439e-08</td>
+                                <td>4.33717e-08</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Get a member by converting to a list first</td>
-                                <td>0.000173203</td>
-                                <td>4413.5</td>
+                                <td>0.000155918</td>
+                                <td>3594.93</td>
                             </tr>
                         
                         </tbody>
