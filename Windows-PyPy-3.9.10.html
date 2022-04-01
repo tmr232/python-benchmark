@@ -58,14 +58,136 @@
                         
                             <tr>
                                 <td>Calls a local function</td>
-                                <td>1.62e-09</td>
+                                <td>1.61e-09</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Call builtin function</td>
-                                <td>1.81e-08</td>
-                                <td>11.1728</td>
+                                <td>1.71e-08</td>
+                                <td>10.6211</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestBasicClassInit</h2>
+
+                <div class="mui-panel">
+                    <p>Compare initialization of different class types.
+    The idea is to compare attrs, dataclasses, and plain classes</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                <td>Initialize a plain class</td>
+                                <td>1.79e-08</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize an attrs class</td>
+                                <td>1.86e-08</td>
+                                <td>1.03911</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize a plain class with slots</td>
+                                <td>1.87e-08</td>
+                                <td>1.04469</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize a dataclass</td>
+                                <td>1.94e-08</td>
+                                <td>1.0838</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize a collections.namedtuple class</td>
+                                <td>4.80392e-08</td>
+                                <td>2.68376</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize a typing.NamedTuple class</td>
+                                <td>4.86726e-08</td>
+                                <td>2.71914</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Initialize a frozen attrs class</td>
+                                <td>5.2e-08</td>
+                                <td>2.90503</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestBasicClassMemberAccess</h2>
+
+                <div class="mui-panel">
+                    <p>Compare member access of different class types.
+    The idea is to compare attrs, dataclasses, and plain classes</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                <td>Access members of a plain class</td>
+                                <td>2.12e-08</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Access members of a plain class with slots</td>
+                                <td>2.16e-08</td>
+                                <td>1.01887</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Access members of an attrs class</td>
+                                <td>2.24e-08</td>
+                                <td>1.0566</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Access members of a frozen attrs class</td>
+                                <td>2.26e-08</td>
+                                <td>1.06604</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Access members of a dataclass</td>
+                                <td>2.38e-08</td>
+                                <td>1.12264</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Access members of a typing.NamedTuple class</td>
+                                <td>2.5e-08</td>
+                                <td>1.17925</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Access members of a collections.namedtuple class</td>
+                                <td>2.58242e-08</td>
+                                <td>1.21812</td>
                             </tr>
                         
                         </tbody>
@@ -88,14 +210,14 @@
                         
                             <tr>
                                 <td>Create a dict using a literal</td>
-                                <td>1.9e-08</td>
+                                <td>2.29e-08</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Create a dict using keyword arguments</td>
-                                <td>2.09e-07</td>
-                                <td>11</td>
+                                <td>2.14e-07</td>
+                                <td>9.34498</td>
                             </tr>
                         
                         </tbody>
@@ -118,20 +240,20 @@
                         
                             <tr>
                                 <td>Create a dict comprehension</td>
-                                <td>0.0079599</td>
+                                <td>0.0067925</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Create a dict from a list comprehension</td>
-                                <td>0.0119023</td>
-                                <td>1.49528</td>
+                                <td>0.0120259</td>
+                                <td>1.77047</td>
                             </tr>
                         
                             <tr>
                                 <td>Create a dict from a generator comprehension</td>
-                                <td>0.0127225</td>
-                                <td>1.59832</td>
+                                <td>0.0125132</td>
+                                <td>1.84221</td>
                             </tr>
                         
                         </tbody>
@@ -154,20 +276,20 @@
                         
                             <tr>
                                 <td>Filter in the comprehension</td>
-                                <td>0.0009968</td>
+                                <td>0.0010257</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Use filter on list comprehension</td>
-                                <td>0.0168034</td>
-                                <td>16.8573</td>
+                                <td>0.016063</td>
+                                <td>15.6605</td>
                             </tr>
                         
                             <tr>
                                 <td>Use filter on generator comprehension</td>
-                                <td>0.0283868</td>
-                                <td>28.4779</td>
+                                <td>0.0291435</td>
+                                <td>28.4133</td>
                             </tr>
                         
                         </tbody>
@@ -195,14 +317,14 @@
                         
                             <tr>
                                 <td>Get an item by using iter and next</td>
-                                <td>2.47525e-08</td>
+                                <td>2.97619e-08</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Get a member by converting to a list first</td>
-                                <td>0.00014</td>
-                                <td>5656</td>
+                                <td>0.0001405</td>
+                                <td>4720.8</td>
                             </tr>
                         
                         </tbody>
