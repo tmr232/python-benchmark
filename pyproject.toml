@@ -10,7 +10,7 @@ pytest-benchmark = "^3.4.1"
 rich = "^12.0.1"
 attrs = "^21.4.0"
 cattrs = "^1.10.0"
-typer = "^0.4.0"
+typer = "0.4.0"
 click = "<8.1.0"
 Jinja2 = "^3.1.1"
 
