@@ -57,15 +57,81 @@
                         <tbody>
                         
                             <tr>
-                                <td>Calls a local function</td>
-                                <td>2.45e-07</td>
+                                <td>Call builtin function</td>
+                                <td>2.57895e-07</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
-                                <td>Call builtin function</td>
-                                <td>2.57895e-07</td>
-                                <td>1.05263</td>
+                                <td>Calls a local function</td>
+                                <td>3e-07</td>
+                                <td>1.16327</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestDictLiteralCreation</h2>
+
+                <div class="mui-panel">
+                    <p>Compare different methods of creating a dict literal</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                <td>Create a dict using a literal</td>
+                                <td>1.76e-07</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Create a dict using keyword arguments</td>
+                                <td>3.69231e-07</td>
+                                <td>2.0979</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestDictComprehension</h2>
+
+                <div class="mui-panel">
+                    <p>Compare different comprehensions for dict creation</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                <td>Create a dict comprehension</td>
+                                <td>0.00480489</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Create a dict from a generator comprehension</td>
+                                <td>0.00968007</td>
+                                <td>2.01463</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Create a dict from a list comprehension</td>
+                                <td>0.0189115</td>
+                                <td>3.9359</td>
                             </tr>
                         
                         </tbody>
@@ -88,20 +154,20 @@
                         
                             <tr>
                                 <td>Filter in the comprehension</td>
-                                <td>0.0026722</td>
+                                <td>0.00292975</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Use filter on list comprehension</td>
-                                <td>0.0088445</td>
-                                <td>3.30982</td>
+                                <td>0.00924628</td>
+                                <td>3.15599</td>
                             </tr>
                         
                             <tr>
                                 <td>Use filter on generator comprehension</td>
-                                <td>0.0103328</td>
-                                <td>3.86678</td>
+                                <td>0.0104576</td>
+                                <td>3.56945</td>
                             </tr>
                         
                         </tbody>
@@ -129,14 +195,14 @@
                         
                             <tr>
                                 <td>Get an item by using iter and next</td>
-                                <td>2.47368e-07</td>
+                                <td>2.45e-07</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 <td>Get a member by converting to a list first</td>
-                                <td>0.0006588</td>
-                                <td>2663.23</td>
+                                <td>0.000685013</td>
+                                <td>2795.97</td>
                             </tr>
                         
                         </tbody>
