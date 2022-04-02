@@ -2,6 +2,7 @@ import inspect
 import json
 import operator
 import os
+import textwrap
 import types
 from collections import defaultdict
 from contextlib import suppress
@@ -19,6 +20,7 @@ import sys
 
 from rich.table import Table
 from jinja2 import Environment, PackageLoader
+from markdown_it import MarkdownIt
 
 
 @attrs.define
@@ -119,7 +121,6 @@ def group_benchmarks(benchmarks: Sequence[Benchmark]) -> Sequence[Group]:
 
 
 def render_group(group: Group):
-
     group_doc = group.cls.__doc__
 
     table = Table(title=group_doc)
@@ -158,10 +159,18 @@ class DisplayGroup:
     benchmarks: list[DisplayBenchmark]
 
 
-def render_groups_html(
-    groups: Sequence[Group], machine_info: MachineInfo, link_base: str | None = None
-):
+def render_docstring(doc: str | None) -> str:
+    if not doc:
+        return ""
+    doc = textwrap.dedent(doc)
+    return MarkdownIt("gfm-like").render(doc)
 
+
+def render_groups_html(
+    groups: Sequence[Group],
+    machine_info: MachineInfo,
+    link_base: str | None = None,
+):
     display_groups = []
     for group in groups:
         benchmarks = sorted(
@@ -182,7 +191,7 @@ def render_groups_html(
 
         display_group = DisplayGroup(
             name=group.cls.__name__,
-            description=group.cls.__doc__,
+            description=render_docstring(group.cls.__doc__),
             benchmarks=display_benchmarks,
         )
         display_groups.append(display_group)
@@ -261,7 +270,7 @@ def directory_html(
             render_groups_html(groups, save.machine_info, link_base=repo_base_url),
             "utf8",
         )
-        print(f"Written report to {out_dir/name}")
+        print(f"Written report to {out_dir / name}")
 
     env = Environment(loader=PackageLoader("python_benchmark", "templates"))
     template = env.get_template("index.html.jinja2")

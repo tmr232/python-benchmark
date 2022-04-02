@@ -2,7 +2,8 @@ import re
 
 
 class TestPairs3:
-    """Try and optimiza splitting a 6-character string into a tuple
+    """
+    Try and optimiza splitting a 6-character string into a tuple
     of 3 2-character strings.
 
     This is based on [Will McGugan](https://twitter.com/willmcgugan)'s
