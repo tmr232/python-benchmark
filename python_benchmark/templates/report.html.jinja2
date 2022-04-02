@@ -32,7 +32,7 @@
             </div>
             <h1>Benchmarks</h1>
             {% for group in groups %}
-                <h2>{{ group.name }}</h2>
+                <h2>{{ group.name }}<a id="{{ group.name }}" href="#{{ group.name }}">🔗</a></h2>
 
                 <div class="mui-panel">
                     <p>{{ group.description }}</p>
