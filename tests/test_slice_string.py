@@ -40,10 +40,6 @@ class TestPairs3:
     def test_pairs3_cached_itemgetter(self, benchmark):
         """Split the string using a cached itemgetter"""
 
-        def split(
-            text,
-            _split=operator.itemgetter(slice(0, 2), slice(2, 4), slice(4, 6)),
-        ):
-            return _split(text)
+        split = operator.itemgetter(slice(0, 2), slice(2, 4), slice(4, 6))
 
         benchmark.pedantic(split, args=(self.TEXT,), iterations=50, rounds=20000)
