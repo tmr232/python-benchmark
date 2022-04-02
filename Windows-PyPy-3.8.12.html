@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css"/>
+
+    <title>Report</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="mui-container">
+    <div class="mui-row">
+        <div class="mui-col-sm-10 mui-col-sm-offset-1">
+            <h2>Config</h2>
+            <div class="mui-panel">
+                <table class="mui-table mui-table--bordered">
+                    <tbody>
+                    
+                        <tr>
+                            <td>Python Implementation</td>
+                            <td>PyPy</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Python Version</td>
+                            <td>3.8.12</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Operating System</td>
+                            <td>Windows 10</td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <h1>Benchmarks</h1>
+            
+                <h2>TestCall<a id="TestCall" href="#TestCall">🔗</a></h2>
+
+                <div class="mui-panel">
+                    <p><p>Call global or local functions</p>
+</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_call.py#L4-L8=">Calls a local function</a></td>
+                                
+                                <td>1.61e-09</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_call.py#L10-L14=">Call builtin function</a></td>
+                                
+                                <td>1.58e-08</td>
+                                <td>9.81366</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestBasicClassInit<a id="TestBasicClassInit" href="#TestBasicClassInit">🔗</a></h2>
+
+                <div class="mui-panel">
+                    <p><p>Compare initialization of different class types.
+The idea is to compare attrs, dataclasses, and plain classes</p>
+</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L12-L20=">Initialize a plain class</a></td>
+                                
+                                <td>7.3e-09</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L22-L32=">Initialize a plain class with slots</a></td>
+                                
+                                <td>7.7e-09</td>
+                                <td>1.05479</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L34-L42=">Initialize an attrs class</a></td>
+                                
+                                <td>8.5e-09</td>
+                                <td>1.16438</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L54-L62=">Initialize a dataclass</a></td>
+                                
+                                <td>9.7e-09</td>
+                                <td>1.32877</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L44-L52=">Initialize a frozen attrs class</a></td>
+                                
+                                <td>2.6455e-08</td>
+                                <td>3.62398</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L64-L71=">Initialize a typing.NamedTuple class</a></td>
+                                
+                                <td>3.42466e-08</td>
+                                <td>4.69131</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L73-L78=">Initialize a collections.namedtuple class</a></td>
+                                
+                                <td>3.42466e-08</td>
+                                <td>4.69131</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L82-L89=">Initialize a typing.TypedDict</a></td>
+                                
+                                <td>5.6e-07</td>
+                                <td>76.7123</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestBasicClassMemberAccess<a id="TestBasicClassMemberAccess" href="#TestBasicClassMemberAccess">🔗</a></h2>
+
+                <div class="mui-panel">
+                    <p><p>Compare member access of different class types.
+The idea is to compare attrs, dataclasses, and plain classes</p>
+</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L183-L192=">Access members of a collections.namedtuple class</a></td>
+                                
+                                <td>1.78218e-08</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L96-L110=">Access members of a plain class</a></td>
+                                
+                                <td>1.8e-08</td>
+                                <td>1.01</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L112-L126=">Access members of a plain class with slots</a></td>
+                                
+                                <td>1.86e-08</td>
+                                <td>1.04367</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L128-L140=">Access members of an attrs class</a></td>
+                                
+                                <td>1.93e-08</td>
+                                <td>1.08294</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L142-L154=">Access members of a frozen attrs class</a></td>
+                                
+                                <td>2e-08</td>
+                                <td>1.12222</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L156-L168=">Access members of a dataclass</a></td>
+                                
+                                <td>2.07e-08</td>
+                                <td>1.1615</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L170-L181=">Access members of a typing.NamedTuple class</a></td>
+                                
+                                <td>2.32e-08</td>
+                                <td>1.30178</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestDictLiteralCreation<a id="TestDictLiteralCreation" href="#TestDictLiteralCreation">🔗</a></h2>
+
+                <div class="mui-panel">
+                    <p><p>Compare different methods of creating a dict literal</p>
+</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L4-L10=">Create a dict using a literal</a></td>
+                                
+                                <td>2.16e-08</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L12-L18=">Create a dict using keyword arguments</a></td>
+                                
+                                <td>2.08e-07</td>
+                                <td>9.62963</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestDictComprehension<a id="TestDictComprehension" href="#TestDictComprehension">🔗</a></h2>
+
+                <div class="mui-panel">
+                    <p><p>Compare different comprehensions for dict creation</p>
+</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L26-L32=">Create a dict comprehension</a></td>
+                                
+                                <td>0.0065667</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L42-L48=">Create a dict from a generator comprehension</a></td>
+                                
+                                <td>0.0120177</td>
+                                <td>1.8301</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L34-L40=">Create a dict from a list comprehension</a></td>
+                                
+                                <td>0.0120907</td>
+                                <td>1.84121</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestFilter<a id="TestFilter" href="#TestFilter">🔗</a></h2>
+
+                <div class="mui-panel">
+                    <p></p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_filter_comprehension.py#L3-L8=">Filter in the comprehension</a></td>
+                                
+                                <td>0.0009884</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_filter_comprehension.py#L10-L16=">Use filter on list comprehension</a></td>
+                                
+                                <td>0.0167096</td>
+                                <td>16.9057</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_filter_comprehension.py#L19-L25=">Use filter on generator comprehension</a></td>
+                                
+                                <td>0.0282053</td>
+                                <td>28.5363</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestSetAccess<a id="TestSetAccess" href="#TestSetAccess">🔗</a></h2>
+
+                <div class="mui-panel">
+                    <p><p>Get any item from set</p>
+<p>In this case we want to get a single element out of a set.
+It does not matter which element, but we need one.</p>
+</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_access.py#L26-L31=">Get an item by using iter and next</a></td>
+                                
+                                <td>2.13018e-08</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_access.py#L19-L24=">Get a member by converting to a list first</a></td>
+                                
+                                <td>0.0001434</td>
+                                <td>6731.83</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <h2>TestPairs3<a id="TestPairs3" href="#TestPairs3">🔗</a></h2>
+
+                <div class="mui-panel">
+                    <p><p>Try and optimiza splitting a 6-character string into a tuple
+of 3 2-character strings.</p>
+<p>This is based on <a href="https://twitter.com/willmcgugan">Will McGugan</a>'s
+<a href="https://twitter.com/willmcgugan/status/1510158982660378626">tweet</a>.</p>
+</p>
+                    <table class="mui-table mui-table--bordered">
+                        <thead>
+                        <tr>
+                            <th>Benchmark</th>
+                            <th>Min</th>
+                            <th>Scaled</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_slice_string.py#L16-L22=">Split the string using simple slices</a></td>
+                                
+                                <td>2e-08</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_slice_string.py#L32-L38=">Split the string using cached slices</a></td>
+                                
+                                <td>3.2e-08</td>
+                                <td>1.6</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_slice_string.py#L40-L45=">Split the string using a cached itemgetter</a></td>
+                                
+                                <td>1.24e-07</td>
+                                <td>6.2</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_slice_string.py#L24-L30=">Split the string using regex</a></td>
+                                
+                                <td>1.3e-07</td>
+                                <td>6.5</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>
