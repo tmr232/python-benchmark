@@ -17,10 +17,7 @@ class TestBasicClassInit:
                 self.name = name
                 self.age = age
 
-        def run():
-            return Person("Arthur", 42)
-
-        benchmark(run)
+        benchmark(Person, "Arthur", 42)
 
     def test_plain_with_slots(self, benchmark):
         """Initialize a plain class with slots"""
@@ -32,10 +29,7 @@ class TestBasicClassInit:
                 self.name = name
                 self.age = age
 
-        def run():
-            return Person("Arthur", 42)
-
-        benchmark(run)
+        benchmark(Person, "Arthur", 42)
 
     def test_attrs(self, benchmark):
         """Initialize an attrs class"""
@@ -45,10 +39,7 @@ class TestBasicClassInit:
             name: str
             age: int
 
-        def run():
-            return Person("Arthur", 42)
-
-        benchmark(run)
+        benchmark(Person, "Arthur", 42)
 
     def test_attrs_frozen(self, benchmark):
         """Initialize a frozen attrs class"""
@@ -58,10 +49,7 @@ class TestBasicClassInit:
             name: str
             age: int
 
-        def run():
-            return Person("Arthur", 42)
-
-        benchmark(run)
+        benchmark(Person, "Arthur", 42)
 
     def test_dataclass(self, benchmark):
         """Initialize a dataclass"""
@@ -71,10 +59,7 @@ class TestBasicClassInit:
             name: str
             age: int
 
-        def run():
-            return Person("Arthur", 42)
-
-        benchmark(run)
+        benchmark(Person, "Arthur", 42)
 
     def test_typing_namedtuple(self, benchmark):
         """Initialize a typing.NamedTuple class"""
@@ -83,20 +68,14 @@ class TestBasicClassInit:
             name: str
             age: int
 
-        def run():
-            return Person("Arthur", 42)
-
-        benchmark(run)
+        benchmark(Person, "Arthur", 42)
 
     def test_collections_namedtuple(self, benchmark):
         """Initialize a collections.namedtuple class"""
 
         Person = collections.namedtuple("Person", "name age")
 
-        def run():
-            return Person("Arthur", 42)
-
-        benchmark(run)
+        benchmark(Person, "Arthur", 42)
 
     if hasattr(typing, "TypedDict"):
         # Requires Python >=3.8
@@ -107,26 +86,7 @@ class TestBasicClassInit:
                 name: str
                 age: int
 
-            def run():
-                return Person(name="Arthur", age=42)
-
-            benchmark(run)
-
-    def test_dict(self, benchmark):
-        """Initialize a dict"""
-
-        def run():
-            return {"name": "Arthor", "age": 42}
-
-        benchmark(run)
-
-    def test_tuple(self, benchmark):
-        """Initialize a tuple"""
-
-        def run():
-            return ("Arthur", 42)
-
-        benchmark(run)
+            benchmark(Person, name="Arthur", age=42)
 
 
 class TestBasicClassMemberAccess:
@@ -159,9 +119,7 @@ class TestBasicClassMemberAccess:
                 self.name = name
                 self.age = age
 
-        p = Person("Arthur", 42)
-
-        def run():
+        def run(p=Person("Arthur", 42)):
             p.name
             p.age
 
@@ -175,9 +133,7 @@ class TestBasicClassMemberAccess:
             name: str
             age: int
 
-        p = Person("Arthur", 42)
-
-        def run():
+        def run(p=Person("Arthur", 42)):
             p.name
             p.age
 
@@ -191,9 +147,7 @@ class TestBasicClassMemberAccess:
             name: str
             age: int
 
-        p = Person("Arthur", 42)
-
-        def run():
+        def run(p=Person("Arthur", 42)):
             p.name
             p.age
 
@@ -207,9 +161,7 @@ class TestBasicClassMemberAccess:
             name: str
             age: int
 
-        p = Person("Arthur", 42)
-
-        def run():
+        def run(p=Person("Arthur", 42)):
             p.name
             p.age
 
@@ -222,9 +174,7 @@ class TestBasicClassMemberAccess:
             name: str
             age: int
 
-        p = Person("Arthur", 42)
-
-        def run():
+        def run(p=Person("Arthur", 42)):
             p.name
             p.age
 
@@ -235,9 +185,7 @@ class TestBasicClassMemberAccess:
 
         Person = collections.namedtuple("Person", "name age")
 
-        p = Person("Arthur", 42)
-
-        def run():
+        def run(p=Person("Arthur", 42)):
             p.name
             p.age
 
