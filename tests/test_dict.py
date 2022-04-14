@@ -1,4 +1,7 @@
-class TestDictLiteralCreation:
+from tests.utils import Verify
+
+
+class TestDictLiteralCreation(Verify):
     """Compare different methods of creating a dict literal"""
 
     def test_literal(self, benchmark):
@@ -18,7 +21,7 @@ class TestDictLiteralCreation:
         benchmark(run)
 
 
-class TestDictComprehension:
+class TestDictComprehension(Verify):
     """Compare different comprehensions for dict creation"""
 
     VALUES = list(range(100000))
