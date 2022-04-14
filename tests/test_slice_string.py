@@ -1,8 +1,10 @@
 import operator
 import re
 
+from tests.utils import Verify
 
-class TestPairs3:
+
+class TestPairs3(Verify):
     """
     Try and optimiza splitting a 6-character string into a tuple
     of 3 2-character strings.
