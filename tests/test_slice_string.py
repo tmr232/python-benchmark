@@ -1,10 +1,12 @@
 import operator
 import re
 
-from tests.utils import Verify
+from tests.utils import verify, pedantic
 
 
-class TestPairs3(Verify):
+@verify
+@pedantic(iterations=50, rounds=20_000)
+class TestPairs3:
     """
     Try and optimiza splitting a 6-character string into a tuple
     of 3 2-character strings.
@@ -21,7 +23,7 @@ class TestPairs3(Verify):
         def split(text):
             return text[0:2], text[2:4], text[4:6]
 
-        benchmark.pedantic(split, args=(self.TEXT,), iterations=50, rounds=20000)
+        benchmark(split, self.TEXT)
 
     def test_pairs3_re(self, benchmark):
         """Split the string using regex"""
@@ -29,7 +31,7 @@ class TestPairs3(Verify):
         def split(text, _match=re.compile(r"(..)(..)(..)").match):
             return _match(text).groups()
 
-        benchmark.pedantic(split, args=(self.TEXT,), iterations=50, rounds=20000)
+        benchmark(split, self.TEXT)
 
     def test_pairs3_slice_cached(self, benchmark):
         """Split the string using cached slices"""
@@ -37,11 +39,11 @@ class TestPairs3(Verify):
         def split(text, group1=slice(0, 2), group2=slice(2, 4), group3=slice(4, 6)):
             return text[group1], text[group2], text[group3]
 
-        benchmark.pedantic(split, args=(self.TEXT,), iterations=50, rounds=20000)
+        benchmark(split, self.TEXT)
 
     def test_pairs3_cached_itemgetter(self, benchmark):
         """Split the string using a cached itemgetter"""
 
         split = operator.itemgetter(slice(0, 2), slice(2, 4), slice(4, 6))
 
-        benchmark.pedantic(split, args=(self.TEXT,), iterations=50, rounds=20000)
+        benchmark(split, self.TEXT)
