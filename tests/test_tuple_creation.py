@@ -1,7 +1,8 @@
-from tests.utils import Verify
+from tests.utils import verify
 
 
-class TestTupleComprehension(Verify):
+@verify
+class TestTupleComprehension:
     """
     Compare various ways to write "tuple comprehensions"
     """
