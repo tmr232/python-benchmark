@@ -29,12 +29,12 @@
                     
                         <tr>
                             <td>Python Version</td>
-                            <td>3.9.12</td>
+                            <td>3.9.13</td>
                         </tr>
                     
                         <tr>
                             <td>Operating System</td>
-                            <td>Windows 10</td>
+                            <td>Darwin 20.6.0</td>
                         </tr>
                     
                     </tbody>
@@ -61,7 +61,7 @@
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_call.py#L10-L14=">Call builtin function</a></td>
                                 
-                                <td>2.4e-07</td>
+                                <td>2.29167e-07</td>
                                 <td>1</td>
                             </tr>
                         
@@ -69,8 +69,8 @@
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_call.py#L4-L8=">Calls a local function</a></td>
                                 
-                                <td>2.45e-07</td>
-                                <td>1.02083</td>
+                                <td>2.2955e-07</td>
+                                <td>1.00167</td>
                             </tr>
                         
                         </tbody>
@@ -95,66 +95,66 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                         
                             <tr>
                                 
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L82-L89=">Initialize a typing.TypedDict</a></td>
+                                
+                                <td>2.36375e-07</td>
+                                <td>1</td>
+                            </tr>
+                        
+                            <tr>
+                                
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L34-L42=">Initialize an attrs class</a></td>
                                 
-                                <td>2.35e-07</td>
-                                <td>1</td>
+                                <td>2.49278e-07</td>
+                                <td>1.05459</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L22-L32=">Initialize a plain class with slots</a></td>
                                 
-                                <td>2.38889e-07</td>
-                                <td>1.01655</td>
-                            </tr>
-                        
-                            <tr>
-                                
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L54-L62=">Initialize a dataclass</a></td>
-                                
-                                <td>2.9e-07</td>
-                                <td>1.23404</td>
-                            </tr>
-                        
-                            <tr>
-                                
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L12-L20=">Initialize a plain class</a></td>
-                                
-                                <td>2.95e-07</td>
-                                <td>1.25532</td>
-                            </tr>
-                        
-                            <tr>
-                                
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L64-L71=">Initialize a typing.NamedTuple class</a></td>
-                                
-                                <td>3e-07</td>
-                                <td>1.2766</td>
+                                <td>2.52471e-07</td>
+                                <td>1.06809</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L73-L78=">Initialize a collections.namedtuple class</a></td>
                                 
-                                <td>4e-07</td>
-                                <td>1.70213</td>
+                                <td>2.86133e-07</td>
+                                <td>1.21051</td>
                             </tr>
                         
                             <tr>
                                 
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L82-L89=">Initialize a typing.TypedDict</a></td>
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L64-L71=">Initialize a typing.NamedTuple class</a></td>
                                 
-                                <td>4e-07</td>
-                                <td>1.70213</td>
+                                <td>2.92267e-07</td>
+                                <td>1.23645</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L12-L20=">Initialize a plain class</a></td>
+                                
+                                <td>3.023e-07</td>
+                                <td>1.2789</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L54-L62=">Initialize a dataclass</a></td>
+                                
+                                <td>3.07357e-07</td>
+                                <td>1.30029</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L44-L52=">Initialize a frozen attrs class</a></td>
                                 
-                                <td>4.9e-07</td>
-                                <td>2.08511</td>
+                                <td>4.7685e-07</td>
+                                <td>2.01735</td>
                             </tr>
                         
                         </tbody>
@@ -179,58 +179,58 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                         
                             <tr>
                                 
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L170-L181=">Access members of a typing.NamedTuple class</a></td>
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L128-L140=">Access members of an attrs class</a></td>
                                 
-                                <td>1.5e-07</td>
+                                <td>1.6977e-07</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L112-L126=">Access members of a plain class with slots</a></td>
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L170-L181=">Access members of a typing.NamedTuple class</a></td>
                                 
-                                <td>1.54e-07</td>
-                                <td>1.02667</td>
+                                <td>1.6987e-07</td>
+                                <td>1.00059</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L142-L154=">Access members of a frozen attrs class</a></td>
                                 
-                                <td>1.58e-07</td>
-                                <td>1.05333</td>
-                            </tr>
-                        
-                            <tr>
-                                
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L156-L168=">Access members of a dataclass</a></td>
-                                
-                                <td>1.59e-07</td>
-                                <td>1.06</td>
-                            </tr>
-                        
-                            <tr>
-                                
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L96-L110=">Access members of a plain class</a></td>
-                                
-                                <td>1.61538e-07</td>
-                                <td>1.07692</td>
+                                <td>1.723e-07</td>
+                                <td>1.0149</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L183-L192=">Access members of a collections.namedtuple class</a></td>
                                 
-                                <td>1.61538e-07</td>
-                                <td>1.07692</td>
+                                <td>1.72346e-07</td>
+                                <td>1.01517</td>
                             </tr>
                         
                             <tr>
                                 
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L128-L140=">Access members of an attrs class</a></td>
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L112-L126=">Access members of a plain class with slots</a></td>
                                 
-                                <td>1.61905e-07</td>
-                                <td>1.07937</td>
+                                <td>1.748e-07</td>
+                                <td>1.02963</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L96-L110=">Access members of a plain class</a></td>
+                                
+                                <td>1.7659e-07</td>
+                                <td>1.04017</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_class_init.py#L156-L168=">Access members of a dataclass</a></td>
+                                
+                                <td>1.7722e-07</td>
+                                <td>1.04388</td>
                             </tr>
                         
                         </tbody>
@@ -256,7 +256,7 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L8-L14=">Create a dict using a literal</a></td>
                                 
-                                <td>1e-06</td>
+                                <td>7.7e-07</td>
                                 <td>1</td>
                             </tr>
                         
@@ -264,8 +264,8 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L16-L22=">Create a dict using keyword arguments</a></td>
                                 
-                                <td>1e-06</td>
-                                <td>1</td>
+                                <td>9.7e-07</td>
+                                <td>1.25974</td>
                             </tr>
                         
                         </tbody>
@@ -291,7 +291,7 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L31-L37=">Create a dict comprehension</a></td>
                                 
-                                <td>0.0115564</td>
+                                <td>0.00773794</td>
                                 <td>1</td>
                             </tr>
                         
@@ -299,16 +299,16 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L47-L53=">Create a dict from a generator comprehension</a></td>
                                 
-                                <td>0.0186523</td>
-                                <td>1.61402</td>
+                                <td>0.00976704</td>
+                                <td>1.26223</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_dict.py#L39-L45=">Create a dict from a list comprehension</a></td>
                                 
-                                <td>0.021845</td>
-                                <td>1.89029</td>
+                                <td>0.016067</td>
+                                <td>2.0764</td>
                             </tr>
                         
                         </tbody>
@@ -333,7 +333,7 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_filter_comprehension.py#L3-L8=">Filter in the comprehension</a></td>
                                 
-                                <td>0.0032082</td>
+                                <td>0.00400678</td>
                                 <td>1</td>
                             </tr>
                         
@@ -341,16 +341,16 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_filter_comprehension.py#L10-L16=">Use filter on list comprehension</a></td>
                                 
-                                <td>0.0107139</td>
-                                <td>3.33954</td>
+                                <td>0.00980215</td>
+                                <td>2.44639</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_filter_comprehension.py#L19-L25=">Use filter on generator comprehension</a></td>
                                 
-                                <td>0.0128091</td>
-                                <td>3.99261</td>
+                                <td>0.00997454</td>
+                                <td>2.48942</td>
                             </tr>
                         
                         </tbody>
@@ -376,7 +376,7 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_lookups.py#L15-L18=">Access list values</a></td>
                                 
-                                <td>3.99e-05</td>
+                                <td>4.8811e-05</td>
                                 <td>1</td>
                             </tr>
                         
@@ -384,8 +384,8 @@ The idea is to compare attrs, dataclasses, and plain classes</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_lookups.py#L20-L23=">Access dict values</a></td>
                                 
-                                <td>0.0001133</td>
-                                <td>2.8396</td>
+                                <td>0.000101023</td>
+                                <td>2.06968</td>
                             </tr>
                         
                         </tbody>
@@ -413,7 +413,7 @@ It does not matter which element, but we need one.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_access.py#L26-L31=">Get an item by using iter and next</a></td>
                                 
-                                <td>2e-07</td>
+                                <td>1.8181e-07</td>
                                 <td>1</td>
                             </tr>
                         
@@ -421,8 +421,8 @@ It does not matter which element, but we need one.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_access.py#L19-L24=">Get a member by converting to a list first</a></td>
                                 
-                                <td>0.0007892</td>
-                                <td>3946</td>
+                                <td>0.000724113</td>
+                                <td>3982.81</td>
                             </tr>
                         
                         </tbody>
@@ -448,32 +448,32 @@ It does not matter which element, but we need one.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_operations.py#L40-L47=">Use `|=` with a set compregension</a></td>
                                 
-                                <td>4.16e-07</td>
+                                <td>3.896e-07</td>
                                 <td>1</td>
-                            </tr>
-                        
-                            <tr>
-                                
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_operations.py#L22-L29=">Call `set.update` with a list compregension</a></td>
-                                
-                                <td>4.46e-07</td>
-                                <td>1.07212</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_operations.py#L31-L38=">Call `set.update` with a set compregension</a></td>
                                 
-                                <td>4.66e-07</td>
-                                <td>1.12019</td>
+                                <td>4.3408e-07</td>
+                                <td>1.11417</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_operations.py#L13-L20=">Call `set.update` with a generator compregension</a></td>
                                 
-                                <td>5.14e-07</td>
-                                <td>1.23558</td>
+                                <td>4.5566e-07</td>
+                                <td>1.16956</td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_operations.py#L22-L29=">Call `set.update` with a list compregension</a></td>
+                                
+                                <td>4.6826e-07</td>
+                                <td>1.2019</td>
                             </tr>
                         
                         </tbody>
@@ -499,7 +499,7 @@ It does not matter which element, but we need one.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_operations.py#L64-L67=">Use `|=` with a set compregension</a></td>
                                 
-                                <td>6.6e-08</td>
+                                <td>6.16e-08</td>
                                 <td>1</td>
                             </tr>
                         
@@ -507,8 +507,8 @@ It does not matter which element, but we need one.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_operations.py#L59-L62=">Call `set.update` with a generator compregension</a></td>
                                 
-                                <td>7.2e-08</td>
-                                <td>1.09091</td>
+                                <td>6.222e-08</td>
+                                <td>1.01006</td>
                             </tr>
                         
                         </tbody>
@@ -534,7 +534,7 @@ It does not matter which element, but we need one.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_union.py#L18-L24=">Merge sets using set.union</a></td>
                                 
-                                <td>0.00227</td>
+                                <td>0.000822973</td>
                                 <td>1</td>
                             </tr>
                         
@@ -542,8 +542,8 @@ It does not matter which element, but we need one.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_set_union.py#L26-L32=">Merge sets using set(itertools.chain)</a></td>
                                 
-                                <td>0.0051987</td>
-                                <td>2.29018</td>
+                                <td>0.0022487</td>
+                                <td>2.73242</td>
                             </tr>
                         
                         </tbody>
@@ -572,7 +572,7 @@ of 3 2-character strings.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_slice_string.py#L44-L49=">Split the string using a cached itemgetter</a></td>
                                 
-                                <td>2.22e-07</td>
+                                <td>2.6992e-07</td>
                                 <td>1</td>
                             </tr>
                         
@@ -580,24 +580,24 @@ of 3 2-character strings.</p>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_slice_string.py#L36-L42=">Split the string using cached slices</a></td>
                                 
-                                <td>3.3e-07</td>
-                                <td>1.48649</td>
+                                <td>3.802e-07</td>
+                                <td>1.40857</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_slice_string.py#L20-L26=">Split the string using simple slices</a></td>
                                 
-                                <td>3.44e-07</td>
-                                <td>1.54955</td>
+                                <td>4.2882e-07</td>
+                                <td>1.58869</td>
                             </tr>
                         
                             <tr>
                                 
                                     <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_slice_string.py#L28-L34=">Split the string using regex</a></td>
                                 
-                                <td>5.5e-07</td>
-                                <td>2.47748</td>
+                                <td>5.7746e-07</td>
+                                <td>2.13937</td>
                             </tr>
                         
                         </tbody>
@@ -621,18 +621,18 @@ of 3 2-character strings.</p>
                         
                             <tr>
                                 
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_tuple_creation.py#L12-L18=">tuple from generator comprehension</a></td>
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_tuple_creation.py#L20-L26=">tuple from list comprehension</a></td>
                                 
-                                <td>0.0643919</td>
+                                <td>0.0351177</td>
                                 <td>1</td>
                             </tr>
                         
                             <tr>
                                 
-                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_tuple_creation.py#L20-L26=">tuple from list comprehension</a></td>
+                                    <td><a href="https://github.com/tmr232/python-benchmark/blob/main/tests/test_tuple_creation.py#L12-L18=">tuple from generator comprehension</a></td>
                                 
-                                <td>0.0663989</td>
-                                <td>1.03117</td>
+                                <td>0.0420049</td>
+                                <td>1.19612</td>
                             </tr>
                         
                         </tbody>
