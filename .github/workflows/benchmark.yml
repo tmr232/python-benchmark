@@ -14,34 +14,31 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [ 3.7, 3.8, 3.9, "3.10", pypy-3.7, pypy-3.8, pypy-3.9, "3.11.0-beta.1" ]
-        poetry-version: [ 1.1.13 ]
+        python-version: [ "3.9", "3.10", pypy-3.7, pypy-3.8, pypy-3.9, "3.11","3.12","3.13" ]
         os: [ ubuntu-latest , windows-latest, macos-latest ]
-        exclude:
-          # Disable because poetry doesn't install and I don't know how to fix it yet.
-          - os: ubuntu-latest
-            python-version: pypy-3.9
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Poetry
-        uses: abatilo/actions-poetry@v2.0.0
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v4
         with:
-          poetry-version: ${{ matrix.poetry-version }}
+          version: "latest"
+
       - name: Install Dependencies
-        run: poetry install
+        run: uv sync
 
 
       - name: Benchmark
-        run: poetry run pytest --benchmark-autosave
+        run: uv pytest --benchmark-autosave
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: .benchmarks
           path: .benchmarks
@@ -52,33 +49,30 @@ jobs:
       - benchmark
     strategy:
       matrix:
-        python-version: [ "3.10" ]
-        poetry-version: [ 1.1.13 ]
+        python-version: [ "3.13" ]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Poetry
-        uses: abatilo/actions-poetry@v2.0.0
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v4
         with:
-          poetry-version: ${{ matrix.poetry-version }}
+          version: "latest"
       - name: Install Dependencies
-        run: poetry install
+        run: uv sync
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
 
       - name: Report
-        run: poetry run python -m python_benchmark.bench_reporter directory-html .benchmarks .public --repo-base-url https://github.com/tmr232/python-benchmark/blob/main
+        run: uv run python -m python_benchmark.bench_reporter directory-html .benchmarks .public --repo-base-url https://github.com/tmr232/python-benchmark/blob/main
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Report
           path: .public
 
       - name: Deploy
         if: ${{ github.ref == 'refs/heads/main' }}
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .public
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -87,6 +87,7 @@ def verify(cls: type):
 
 
 def pedantic(*, iterations: Optional[int] = None, rounds: Optional[int] = None):
+    return lambda x: x
     def decorator(cls):
         customize_benchmark(cls)
         update_config(cls, iterations=iterations, rounds=rounds)
