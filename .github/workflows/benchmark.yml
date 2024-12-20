@@ -44,7 +44,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           include-hidden-files: true
-          name: .benchmarks
+          name: benchmarks-${{matrix.python-version}}-${{matrix.os}}
           path: ./.benchmarks/
 
   report:
@@ -67,6 +67,12 @@ jobs:
         run: uv sync
 
       - uses: actions/download-artifact@v4
+        with:
+          path: .benchmarks
+          merge-multiple: true
+
+      - run: ls -R .benchmarks
+
 
       - name: Report
         run: uv run python -m python_benchmark.bench_reporter directory-html .benchmarks .public --repo-base-url https://github.com/tmr232/python-benchmark/blob/main
