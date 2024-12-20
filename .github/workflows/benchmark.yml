@@ -38,9 +38,6 @@ jobs:
       - name: Benchmark
         run: uv run pytest --benchmark-autosave
 
-      - run: ls -A
-      - run: ls ./.benchmarks
-
       - uses: actions/upload-artifact@v4
         with:
           include-hidden-files: true
@@ -70,8 +67,6 @@ jobs:
         with:
           path: .benchmarks
           merge-multiple: true
-
-      - run: ls -R .benchmarks
 
 
       - name: Report
