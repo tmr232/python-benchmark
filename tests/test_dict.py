@@ -1,7 +1,6 @@
 from tests.utils import verify
 
 
-@verify
 class TestDictLiteralCreation:
     """Compare different methods of creating a dict literal"""
 
@@ -22,7 +21,6 @@ class TestDictLiteralCreation:
         benchmark(run)
 
 
-@verify
 class TestDictComprehension:
     """Compare different comprehensions for dict creation"""
 

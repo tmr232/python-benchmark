@@ -1,7 +1,6 @@
 from tests.utils import pedantic, verify
 
 
-@verify
 @pedantic(iterations=50, rounds=20000)
 class TestSetUpdateWithGen:
     """

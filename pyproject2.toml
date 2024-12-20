@@ -5,7 +5,7 @@ description = ""
 authors = ["Tamir Bahar"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
 pytest-benchmark = "^3.4.1"
 rich = "^12.0.1"
 attrs = "^21.4.0"

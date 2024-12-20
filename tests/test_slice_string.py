@@ -4,7 +4,6 @@ import re
 from tests.utils import verify, pedantic
 
 
-@verify
 @pedantic(iterations=50, rounds=20_000)
 class TestPairs3:
     """

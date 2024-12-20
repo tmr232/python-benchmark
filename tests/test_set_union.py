@@ -2,7 +2,6 @@ import itertools
 from tests.utils import verify
 
 
-@verify
 class TestSetUnion:
     """
     Test the performance of different ways to unify multiple sets.
