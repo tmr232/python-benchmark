@@ -36,7 +36,7 @@ jobs:
 
 
       - name: Benchmark
-        run: uv pytest --benchmark-autosave
+        run: uv run pytest --benchmark-autosave
 
       - uses: actions/upload-artifact@v4
         with:
